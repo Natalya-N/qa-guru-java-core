@@ -3,7 +3,7 @@ import pages.RegistrationPage;
 import utils.TestDataGenerator;
 
 
-public class RegistrationWithPageObjectsTests extends TestBase {
+public class RegistrationWithPageObjectsTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     TestDataGenerator testData = new TestDataGenerator();
