@@ -11,6 +11,7 @@ public class RegistrationWithPageObjectsTest extends TestBase {
     @Test
     void successfulRegistrationTest() {
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.emailAddress)
@@ -41,6 +42,7 @@ public class RegistrationWithPageObjectsTest extends TestBase {
     @Test
     void successfulRegistrationMinimumValuesTest() {
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.emailAddress)
@@ -59,6 +61,7 @@ public class RegistrationWithPageObjectsTest extends TestBase {
     @Test
     void unsuccessfulRegistrationTest() {
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(testData.firstName)
                 .submit()
                 .checkModalDialogNotAppear();

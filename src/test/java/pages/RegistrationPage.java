@@ -23,10 +23,7 @@ public class RegistrationPage {
             currentAddressTextArea = $("#currentAddress"),
             stateWrapper = $("#state"),
             stateCityContainerWrapper = $("#stateCity-wrapper"),
-            cityWrapper = $("#city"),
-            submitButton = $("#submit"),
-            dialogForm = $(".modal-dialog"),
-            dialogFormTitle = $("#example-modal-sizes-title-lg ");
+            cityWrapper = $("#city");
 
     CalendarComponent calendarComponent = new CalendarComponent();
     TableComponent tableComponent = new TableComponent();
@@ -34,9 +31,13 @@ public class RegistrationPage {
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+
+        return this;
+    }
+
+    public RegistrationPage removeBanner() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
-
         return this;
     }
 
@@ -125,13 +126,6 @@ public class RegistrationPage {
 
     public RegistrationPage checkModalDialogNotAppear() {
         $(".modal-dialog").shouldNot(appear);
-
-        return this;
-    }
-
-    public RegistrationPage checkResult(String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
 
         return this;
     }
