@@ -7,6 +7,18 @@ public class RegistrationWithPageObjectsTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     TestDataGenerator testData = new TestDataGenerator();
+    private final String
+            studentName = "Student Name",
+            studentEmail = "Student Email",
+            gender = "Gender",
+            mobile = "Mobile",
+            dateOfBirth ="Date of Birth",
+            subjects = "Subjects",
+            hobbies = "Hobbies",
+            picture = "Picture",
+            address = "Address",
+            stateAndCity = "State and City",
+            gitPicture = "git.png";
 
     @Test
     void successfulRegistrationTest() {
@@ -20,22 +32,22 @@ public class RegistrationWithPageObjectsTest extends TestBase {
                 .setDateOfBirth(testData.dayOfBirth, testData.monthOfBirth, testData.yearOfBirth)
                 .setSubjects(testData.subjects)
                 .setHobbiesWrapper(testData.hobbies)
-                .setUploadPicture("git.png")
+                .setUploadPicture(gitPicture)
                 .setCurrentAddress(testData.currentAddress)
                 .setState(testData.state)
                 .setCity(testData.city);
         registrationPage.submit();
         registrationPage.checkModalDialogAppear()
-                .checkDataInTable("Student Name",testData.firstName + " " + testData.lastName)
-                .checkDataInTable("Student Email",testData.emailAddress)
-                .checkDataInTable("Gender",testData.gender)
-                .checkDataInTable("Mobile",testData.mobileNumber)
-                .checkDataInTable("Date of Birth",testData.dayOfBirth + " " + testData.monthOfBirth + "," + testData.yearOfBirth)
-                .checkDataInTable("Subjects",testData.subjects)
-                .checkDataInTable("Hobbies",testData.hobbies)
-                .checkDataInTable("Picture","git.png")
-                .checkDataInTable("Address", testData.currentAddress)
-                .checkDataInTable("State and City",testData.state +" " + testData.city);
+                .checkDataInTable(studentName, testData.firstName + " " + testData.lastName)
+                .checkDataInTable(studentEmail, testData.emailAddress)
+                .checkDataInTable(gender, testData.gender)
+                .checkDataInTable(mobile, testData.mobileNumber)
+                .checkDataInTable(dateOfBirth, testData.dayOfBirth + " " + testData.monthOfBirth + "," + testData.yearOfBirth)
+                .checkDataInTable(subjects ,testData.subjects)
+                .checkDataInTable(hobbies ,testData.hobbies)
+                .checkDataInTable(picture,gitPicture)
+                .checkDataInTable(address, testData.currentAddress)
+                .checkDataInTable(stateAndCity, testData.state +" " + testData.city);
 
     }
 
@@ -51,11 +63,11 @@ public class RegistrationWithPageObjectsTest extends TestBase {
                 .setDateOfBirth(testData.dayOfBirth, testData.monthOfBirth, testData.yearOfBirth);
         registrationPage.submit();
         registrationPage.checkModalDialogAppear()
-                .checkDataInTable("Student Name",testData.firstName + " " + testData.lastName)
-                .checkDataInTable("Student Email",testData.emailAddress)
-                .checkDataInTable("Gender",testData.gender)
-                .checkDataInTable("Mobile",testData.mobileNumber)
-                .checkDataInTable("Date of Birth",testData.dayOfBirth + " " + testData.monthOfBirth + "," + testData.yearOfBirth);
+                .checkDataInTable(studentName, testData.firstName + " " + testData.lastName)
+                .checkDataInTable(studentEmail, testData.emailAddress)
+                .checkDataInTable(gender, testData.gender)
+                .checkDataInTable(mobile, testData.mobileNumber)
+                .checkDataInTable(dateOfBirth, testData.dayOfBirth + " " + testData.monthOfBirth + "," + testData.yearOfBirth);
     }
 
     @Test
