@@ -17,8 +17,7 @@ public class RegistrationWithPageObjectsTest extends TestBase {
             hobbies = "Hobbies",
             picture = "Picture",
             address = "Address",
-            stateAndCity = "State and City",
-            gitPicture = "git.png";
+            stateAndCity = "State and City";
 
     @Test
     void successfulRegistrationTest() {
@@ -32,7 +31,7 @@ public class RegistrationWithPageObjectsTest extends TestBase {
                 .setDateOfBirth(testData.dayOfBirth, testData.monthOfBirth, testData.yearOfBirth)
                 .setSubjects(testData.subjects)
                 .setHobbiesWrapper(testData.hobbies)
-                .setUploadPicture(gitPicture)
+                .setUploadPicture(testData.image)
                 .setCurrentAddress(testData.currentAddress)
                 .setState(testData.state)
                 .setCity(testData.city);
@@ -45,7 +44,7 @@ public class RegistrationWithPageObjectsTest extends TestBase {
                 .checkDataInTable(dateOfBirth, testData.dayOfBirth + " " + testData.monthOfBirth + "," + testData.yearOfBirth)
                 .checkDataInTable(subjects ,testData.subjects)
                 .checkDataInTable(hobbies ,testData.hobbies)
-                .checkDataInTable(picture,gitPicture)
+                .checkDataInTable(picture,testData.image)
                 .checkDataInTable(address, testData.currentAddress)
                 .checkDataInTable(stateAndCity, testData.state +" " + testData.city);
 

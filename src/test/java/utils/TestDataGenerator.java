@@ -36,8 +36,8 @@ public class TestDataGenerator {
     }
 
     public String getGender() {
-        String[] genders = {"Male", "Female", "Other"};
-        return genders[faker.number().numberBetween(0, genders.length - 1)];
+        return faker.options().option("Male", "Female", "Other");
+
     }
 
     public String getMobileNumber() {
@@ -49,28 +49,24 @@ public class TestDataGenerator {
     }
 
     public String getMonthOfBirth() {
-        String[] months = {"January","February","March","April","May","June","July",
-                "August","September","October","November","December"};
-        return months[faker.number().numberBetween(0, months.length - 1)];
+        return faker.options().option("January","February","March","April","May","June","July",
+                "August","September","October","November","December");
     }
 
     public String getYearOfBirth() {
-        return String.valueOf(faker.number().numberBetween(1924,2024));
+        return String.valueOf(faker.number().numberBetween(1924, 2024));
     }
 
     public String getSubjects() {
-        String[] subjects = {"Arts", "History", "English", "Chemistry",
-                "Commerce", "Economics", "Maths", "Social Studies", "Physics", "Biology"};
-        return subjects[faker.number().numberBetween(0, subjects.length - 1)];
+        return faker.options().option("Arts", "History", "English", "Chemistry",
+                "Commerce", "Economics", "Maths", "Social Studies", "Physics", "Biology");
     }
 
     public String getHobbies() {
-        String[] hobbies = {"Sports", "Reading", "Music"};
-        return hobbies[faker.number().numberBetween(0, hobbies.length - 1)];
+        return faker.options().option("Sports", "Reading", "Music");
     }
     public String getImage() {
-        String[] images = {"git.png"};
-        return images[faker.number().numberBetween(0, images.length - 1)];
+        return faker.options().option("git.png", "git2.png", "git3.png");
     }
 
     public String getCurrentAddress() {
@@ -78,17 +74,15 @@ public class TestDataGenerator {
     }
 
     public String getState() {
-        String[] states = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
-        return states[faker.number().numberBetween(0, states.length - 1)];
+        return faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
     }
 
     public String getCity(String state) {
-        String city = "";
-        if (state.equals("NCR")) city = faker.options().option("Delhi", "Gurgaon", "Noida");
-        if (state.equals("Uttar Pradesh")) city = faker.options().option("Agra", "Lucknow", "Merrut");
-        if (state.equals("Haryana")) city = faker.options().option("Karnal", "Panipat");
-        if (state.equals("Rajasthan")) city = faker.options().option("Jaipur", "Jaiselmer");
-        return city;
+        if (state.equals("NCR")) return faker.options().option("Delhi", "Gurgaon", "Noida");
+        if (state.equals("Uttar Pradesh")) return faker.options().option("Agra", "Lucknow", "Merrut");
+        if (state.equals("Haryana")) return faker.options().option("Karnal", "Panipat");
+        if (state.equals("Rajasthan")) return faker.options().option("Jaipur", "Jaiselmer");
+        return null;
     }
 
 
