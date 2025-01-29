@@ -15,6 +15,7 @@ public class Main {
         newList.addItems(skirt);
         newList.getItems();
         newList.removeItem(skirt);
+        newList.findItem(skirt);
         newList.removeAllItems();
 
         // Map implementation
@@ -24,6 +25,7 @@ public class Main {
         newMap.addItem(hat);
         newMap.addItem(skirt);
         newMap.removeItem(skirt);
+        newMap.findItemByCode(skirt);
         newMap.getItems();
 
         // Queue implementation
@@ -35,7 +37,7 @@ public class Main {
         newQueue.addItem(skirt);
         newQueue.getItems();
         newQueue.removeFirstItem();
-        newQueue.getItems();
+        newQueue.findItem(bag);
 
         // Set implementation
         SetExample newSet = new SetExample();
@@ -45,7 +47,7 @@ public class Main {
         newSet.addItem(skirt);
         newSet.getAvailableItems();
         newSet.removeItem(skirt);
-        newSet.removeItem(skirt);
+        newSet.findItem(bag);
 
     }
 }

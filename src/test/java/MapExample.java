@@ -13,11 +13,24 @@ public class MapExample {
 
     public void removeItem(Item item) {
         items.remove(item.getCode());
+        System.out.println("Removed item from map with name " +
+                "name: " + item.getName() + ";");
+    }
+
+    public void findItemByCode(Item item) {
+        if (items.containsKey(item.getCode()))
+        {
+            System.out.println("Found item with name: " + item.getName() + "; " +
+                    "Item code: " + item.getCode() + "; " +
+                    "Item price: " + item.getPrice() + ";");
+        } else {
+            System.out.println("No items with code " + item.getCode());
+        }
     }
 
     public void getItems() {
         for (Item item : items.values()) {
-            System.out.println("name: " + item.getName() + "; " +
+            System.out.println("Item with name: " + item.getName() + "; " +
                     "Item code: " + item.getCode() + "; " +
                     "Item price: " + item.getPrice() + ";");
         }

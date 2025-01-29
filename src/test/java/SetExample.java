@@ -29,6 +29,16 @@ public class SetExample {
         }
     }
 
+    public void findItem(Item item) {
+        if (items.contains(item)) {
+            System.out.println("Found item with name: " + item.getName() + "; " +
+                    "Item code: " + item.getCode() + "; " +
+                    "Item price: " + item.getPrice() + ";");
+        } else {
+            System.out.println("No items with name " +  item.getName());
+        }
+    }
+
     public void removeItem(Item item) {
         if (items.remove(item)) {
             System.out.println("Remove item with name: " + item.getName());

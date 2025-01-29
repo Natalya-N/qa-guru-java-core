@@ -24,8 +24,19 @@ public class QueueExample {
         }
     }
 
+    public void findItem(Item item) {
+        if (items.contains(item)) {
+            System.out.println("Found item with name: " + item.getName() + "; " +
+                    "Item code: " + item.getCode() + "; " +
+                    "Item price: " + item.getPrice() + ";");
+        } else {
+            System.out.println("No items with name " +  item.getName());
+        }
+    }
+
     public void removeFirstItem() {
         if (items.size() != 0) {
+            System.out.println("Removed item with name "+ items.peek().getName());
             items.poll();
         } else {
             System.out.println("Items list is empty");
